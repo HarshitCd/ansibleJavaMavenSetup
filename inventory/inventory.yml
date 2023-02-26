@@ -1,0 +1,13 @@
+---
+
+- name: Push and run shell script
+  hosts: engineering_vm
+  tasks:
+    - name: Copy shell script
+      copy:
+        src: setupJavaAndMaven.sh
+        dest: ~/script.sh
+        mode: '0755'
+
+    - name: Run shell script
+      command: ~/script.sh
